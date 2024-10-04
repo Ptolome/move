@@ -2,15 +2,17 @@ import { createSlice } from "@reduxjs/toolkit";
 const isAuthSlice=createSlice({
     name: 'Auth',
     initialState: {
-        isAuth:false
+        isAuth:false,
+        isAuthName:''
     },
     reducers: {
-        toEnterAuth(state){
-            state.isAuth=true
+        toEnterAuth(state, action){
+            state.isAuth=true;
+            state.isAuthName=action.payload.username;
         },
         toExitAuth(state){
-            state.isAuth=false
-
+            state.isAuth=false;
+            state.isAuthName='';
         }
     }
 })

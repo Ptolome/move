@@ -1,5 +1,5 @@
 import { createApi,fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-
+// кастомные мидлваре
 const redirectMiddleware = (api) => (next) => (action) => {
   const result = next(action);
   if (result.error && result.error.status >= 300 && result.error.status < 400) {

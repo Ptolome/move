@@ -1,11 +1,11 @@
 import { useNavigate}  from "react-router-dom";
-import TextField from "./TextField";
+import TextField from "../components/TextField";
 import { useState } from "react";
 
 export const SignUp = ()=>{
     const [data, setData] = useState({ email: "", password: "", fullName: "",repPassword:'' });
     const [errorMessage, setErrorMessage]=useState({ email: "", password: "", fullName: "",repPassword:'' })
-    const [isValide, setValide] = useState('false')
+    const [isValide, setValide] = useState(false)
     const navigate=useNavigate()
 
     const handleChange = ({ target }) => {
@@ -32,7 +32,8 @@ export const SignUp = ()=>{
         
         if (data.email && data.fullName && data.password && data.repPassword && isValide) {
             console.log(isValide);
-            window.localStorage.setItem('users', JSON.stringify(data))
+            const {email, password,fullName}=data
+            window.localStorage.setItem('users', JSON.stringify({email, password, fullName, favoriteMoves:[]} ))
 
             alert(`Регитрация прошла успешно!`)
             setErrorMessage({ email: "", password: "", fullName: "",repPassword:'' })

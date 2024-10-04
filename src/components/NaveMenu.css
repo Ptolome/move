@@ -1,0 +1,42 @@
+*{
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+}
+.nav {
+    display: flex;
+    background:pink;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo__picture {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 50px;
+    height: 50px;
+  
+    
+}
+.logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+.list__items {
+    display:flex;
+    box-sizing: border-box;
+    justify-content:end;
+    gap: 30px;
+   
+    
+    list-style: none;
+    /* margin-right:30px ; */
+}
+.list__items li {
+    border-bottom: 3px solid pink;
+}
+.list__items li:hover {
+   
+    border-bottom: 3px solid red;
+}

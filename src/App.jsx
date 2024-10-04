@@ -1,30 +1,37 @@
-import {Routes, Route} from 'react-router-dom'
+import {Routes, Route, Navigate} from 'react-router-dom'
+import { lazy } from 'react';
 import './App.css';
-import { SignIn } from './components/SignIn';
-import { SignUp } from './components/SignUp';
-import { Favorite } from './components/Favorite';
-import {MainPage} from './components/MainPage';
+import { SignIn } from './pages/SignIn';
+import { SignUp } from './pages/SignUp';
+import { Favorite } from './pages/Favorite';
+import {MainPage} from './pages/MainPage';
 import { useSelector } from 'react-redux';
 import NavMenu from './components/NavMenu';
-import PageMove from './components/PageMove';
-
+import Page404 from './pages/Page404';
+// import PageMove from './components/PageMove';
+const PageMove = lazy(() => import ('./pages/PageMove'))
 
 function App() {
   const isAuth= useSelector(store=>store.toAuth.isAuth)
-
+  const isAuthName=useSelector(store=>store.toAuth.isAuthName)
+ 
 
   console.log(isAuth);
   return (
     <>
     <NavMenu/>
-     <h1 style={isAuth ? {background:'green'}: {background:'red'}}>movePoratal</h1>
-     
+    <div className='container line__auth' style={isAuth ? {background:'green'}: {background:'red'}}>
+      <div >movePoratal</div>
+      <div>{isAuth ? isAuthName: "Гость"}</div>
+     </div>
       <Routes>
-        <Route path='*' element={<MainPage/>}/>
+        <Route path='/' element={<MainPage/>}/>
         <Route path='login/in' element={<SignIn/>}/>
         <Route path='login/up' element={<SignUp/>}/>
         <Route path='favorite' element={<Favorite/>}/>
-        <Route path=':id' element={<PageMove />}/>
+        <Route path='move/:id' element={<PageMove/> }/>
+        <Route path='*' element={<Navigate to="/404" replace/>}/>
+        <Route path='/404' element={<Page404/>}/>
       </Routes>
       </>
   );

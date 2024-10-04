@@ -1,4 +1,4 @@
-import TextField from "./TextField";
+import TextField from "../components/TextField";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { toEnterAuth } from "../store/slices/ToAuthSlice";
@@ -20,9 +20,12 @@ export const SignIn = () => {
     const {email,password,fullName} = JSON.parse(localData)
    
     if (data.email === email && data.password === password && data.fullName === fullName ){
-      console.log('Avtorizovan');
-      dispatch(toEnterAuth())
+      
+      dispatch(toEnterAuth({username:fullName}))
       navigate('/')
+      
+    }else{
+      alert('Вы ввели некоректные данные')
     }
   }
   return (
