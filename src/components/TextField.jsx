@@ -1,4 +1,4 @@
-
+import PropTypes from 'prop-types'
 
 const TextField = ({label, type, name,value,onChange}) => {
     
@@ -16,5 +16,12 @@ const TextField = ({label, type, name,value,onChange}) => {
             
         
     );
+}
+TextField.propTypes = {
+    label:PropTypes.string.isRequired,
+    type:PropTypes.string.isRequired,
+    name:PropTypes.string.isRequired,
+    value:PropTypes.string.isRequired,
+    onChange:PropTypes.func.isRequired,
 }
 export default TextField

@@ -1,6 +1,8 @@
 import { useEffect, useState,  } from 'react';
 import './Favorite.css'
 import Pagination from '../components/Pagination';
+import { useContext } from 'react';
+import { ClickCounterContext } from '../context/click-counter';
 
 export const Favorite = () => {
   const [userLocalData, setUserLocalData] = useState([]);
@@ -9,6 +11,7 @@ export const Favorite = () => {
   const [itemsPerPage, setItemsPerPage] = useState(3);
   const [sortField, setSortField] = useState('Title');
   const [sortOrder, setSortOrder] = useState('asc');
+  const { handleSimbolPres } = useContext(ClickCounterContext);
   
   useEffect(() => {
     const storedData = JSON.parse(window.localStorage.getItem('users'));
@@ -17,7 +20,7 @@ export const Favorite = () => {
     }
   }, []);
   const handleDeleteMoveFromFavorite = (data)=>{
-   
+        handleSimbolPres()
     
         const filteredMoves = userLocalData.favoriteMoves.filter((movie)=>movie.imdbID !== data.imdbID)
         userLocalData.favoriteMoves=filteredMoves
@@ -28,6 +31,7 @@ export const Favorite = () => {
     
 }
   const handleChangeSearch = (e) => {
+    handleSimbolPres()
     setSearchValue(e.target.value);
   };
 
@@ -52,10 +56,12 @@ export const Favorite = () => {
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
+    handleSimbolPres()
     
   };
 
   const handleSortChange = (field) => {
+    handleSimbolPres()
     if (sortField === field) {
       setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
     } else {

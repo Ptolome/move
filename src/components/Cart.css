@@ -1,6 +1,6 @@
 .cart{
     /* box-sizing: unset; */
-    border: 2px solid rgb(22, 21, 21);
+    border: 2px solid palevioletred;
     border-radius: 10px;
     background:pink;
     display: flex;
@@ -12,7 +12,7 @@
 .picture {
     border-radius: 10%;
     overflow: hidden;
-    width: 10vw;
+    width: auto;
     height: 18vh;
     margin: 10px;
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import './Cart.css'
-
-const Cart = ({title,year,id,poster}) => {
+import PropsType from 'prop-types'
+const Cart = ({title,year,poster}) => {
     return (
         <div className='cart'>
             <div className='picture'>
@@ -17,7 +17,11 @@ const Cart = ({title,year,id,poster}) => {
         </div>
     );
 }
-
+Cart.propTypes={
+    title:PropsType.string.isRequired,
+    year:PropsType.string.isRequired,
+    poster:PropsType.string.isRequired,
+}
 
 
 export default Cart;
