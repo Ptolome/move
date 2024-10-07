@@ -1,0 +1,28 @@
+.btn__sign {
+    border-radius: 20px;
+    padding: 10px 20px;
+    border: 2px solid palevioletred;
+    box-shadow: 5px 5px 5px red;
+    margin: 10px;
+}
+.btn__sign:hover {
+    background-color: pink;
+    box-shadow: none;
+}
+.sign__form {
+    
+    width: 400px;
+    height: auto;
+    border: 2px solid palevioletred;
+    margin: 0 auto;
+   padding: 30px;
+   border-radius: 30px;
+   box-shadow: 5px 10px 10px red;
+}
+.all-page{
+
+    background-color: pink;
+    height: 90vh;
+    padding: 20vh;
+}
+
