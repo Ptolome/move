@@ -1,70 +1,14 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. В проекте используются функциональные компоненты c хуками.
+2. Есть четкое разделение на умные и глупые компоненты.
+3. Есть рендеринг списков в компонентах. (минимум в 2).:Реализовано в компонентах src/pages/MainPage.jsx, src/pages/Favorite.jsx,src/components/Pagination.jsx
+4. Реализованы формы в компонентах. (минимуи в 1).:src/components/TextField.jsx
+5. Есть применение React Контекст API. добавил фичу подсчет количества нажатий на кнопки src/context
+6. Есть применение предохранителя.src/components/ErrorBoundary.jsx в App.jsx
+7. Есть кастомные хуки (минимум 1). src/hooks/useSignUpForm.jsx выполняет проверку на валидность 
+8. Используется PropTypes (для проектов без TS) (минимум в 3 компонентах). src/components/Cart.jsx,src/components/Pagination.jsx,src/components/TextField.jsx
+9. Есть кейс с применение Debounce. в компоненте MainPage.jsx для отсрочки поиска фильма в функции handleSearch
+10. Есть применение lazy + Suspense. в компоненте App.jsx для ленивой подгрузки компонента PageMove.jsx
+11. В проекте используется Redux Toolkit.состояние авторизации isAuth и имя пользователя fullName
+12. В проекте используется RTK Query. src/store/moveAPI.js
+13. В проекте есть кастомная мидлвара (минимум 1). src/store/moveAPI.js  redirectMiddleware для повторной отправки запроса при ошибках 
+14. Регистрация пользователей в приложении осуществляется через LocalStorage.
