@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/419.51f08fbe.chunk.css","mappings":"AACA,gBACI,YAAa,CAEb,WAAiB,CADjB,SAEJ","sources":["pages/PageMove.css"],"sourcesContent":["\r\n.full_move_cart {\r\n    display: flex;\r\n    width: 80%;\r\n    margin: auto auto;\r\n}\r\n"],"names":[],"sourceRoot":""}
